@@ -5,7 +5,7 @@ function [pValue,tfceStat] = tfce_nullBoot_permuteRows(Y,X,H)
 % ... distribution.
 % By Sam Berens (s.berens@sussex.ac.uk)
 % 
-% Y: Observed data, as a cell array of NifTi file names or a 4D numeric.
+% Y: Observed data, as a cell array of NIfTI file names or a 4D numeric.
 % X: GLM design matrix.
 % H: GLM contrast matrix.
 % pValue: A 3D numeric of pValues.
