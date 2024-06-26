@@ -13,6 +13,7 @@ function [pValue,tfceStat] = tfce_nullBoot_permuteRows(Y,X,H)
 
 %% Hyperparamters
 nBoot = 1e4;
+UseParFor = true;
 
 %% Determine the number of observations (n)
 n = size(X,1);
@@ -26,17 +27,30 @@ tfceStat_vec = tfceStat(mask);
 
 %% Run bootstrapping
 nullStat = nan([numel(tfceStat_vec),nBoot]);
-fh = waitbar(0,'Bootstrapping...');
-for iBoot = 1:nBoot
-    p = randperm(n)';
-    cX = X(p,:);
-    nullStat_vol = tfce_Xcon(Y,cX,H);
-    nullStat(:,iBoot) = nullStat_vol(mask);
-    if mod(iBoot,17)==0
-        waitbar(iBoot/nBoot,fh);
+fprintf('Bootstrapping...%c',10)
+if UseParFor
+    parfor iBoot = 1:nBoot
+        p = randperm(n)';
+        cX = X;
+        cX = cX(p,:);
+        nullStat_vol = tfce_Xcon(Y,cX,H);
+        nullStat(:,iBoot) = nullStat_vol(mask);
+        if mod(iBoot,79)==0
+            fprintf('... %06.2f%% complete%c',(iBoot/nBoot)*100,10)
+        end
+    end
+else
+    for iBoot = 1:nBoot %#ok<UNRCH>
+        p = randperm(n)';
+        cX = X;
+        cX = cX(p,:);
+        nullStat_vol = tfce_Xcon(Y,cX,H);
+        nullStat(:,iBoot) = nullStat_vol(mask);
+        if mod(iBoot,79)==0
+            fprintf('... %06.2f%% complete%c',(iBoot/nBoot)*100,10)
+        end
     end
 end
-close(fh);
 
 %% Compute the pValues
 pValue_vec = mean(repmat(tfceStat_vec,1,nBoot)>nullStat,2);
