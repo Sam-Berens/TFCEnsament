@@ -47,7 +47,7 @@ for iVox = 1:nVox
     end
 end
 
-%% Reshape the testStat and compute the tfce sta
+%% Reshape the testStat and compute the tfce stat
 testStat = reshape(testStat,volSize);
 tfceStat = tfce_getStat(testStat);
 
