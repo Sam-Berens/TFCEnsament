@@ -76,7 +76,7 @@ Masking or cluster-forming thresholds are never required — that’s the point 
 ## Citing this toolbox
 If you use TFCEnsament in your work, please cite:
 
-> Berens, S. (2025). TFCEnsament: MATLAB tools for threshold-free cluster enhancement. _GitHub repository_ https://doi.org/10.5281/zenodo.15299682.
+> Berens, S.C. (2025). TFCEnsament: MATLAB tools for threshold-free cluster enhancement. _GitHub repository_ https://doi.org/10.5281/zenodo.15299682.
 
 and the original TFCE paper:
 
