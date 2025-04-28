@@ -73,11 +73,11 @@ Masking or cluster-forming thresholds are never required — that’s the point 
 ## Citing this toolbox
 If you use TFCEnsament in your work, please cite:
 
-> Berens, S. (2025). TFCEnsament: MATLAB tools for threshold-free cluster enhancement. GitHub repository. doi:10.5281/zenodo.xxxxx
+> Berens, S. (2025). TFCEnsament: MATLAB tools for threshold-free cluster enhancement. GitHub repository.
 
 and the original TFCE paper:
 
-> Smith, S.M., & Nichols, T.E. (2009). Threshold-Free Cluster Enhancement: Addressing problems of smoothing, threshold dependence and localisation in cluster inference. NeuroImage, 44(1), 83-98.
+> Smith, S.M., & Nichols, T.E. (2009). Threshold-Free Cluster Enhancement: Addressing problems of smoothing, threshold dependence and localisation in cluster inference. _NeuroImage, 44_(1), 83-98.
 
 ---
 
