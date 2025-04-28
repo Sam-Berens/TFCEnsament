@@ -79,4 +79,20 @@ and the original TFCE paper:
 
 > Smith, S.M., & Nichols, T.E. (2009). Threshold-Free Cluster Enhancement: Addressing problems of smoothing, threshold dependence and localisation in cluster inference. NeuroImage, 44(1), 83-98.
 
-**Sources used:** :contentReference[oaicite:0]{index=0}
+---
+
+## Contributing
+Contributions, suggestions, and improvements are welcome! Please fork the repository and submit a pull request with your changes.
+
+---
+
+## License
+This project is licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+You are free to share and adapt the material under the following terms:
+- **Attribution:** You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **No additional restrictions:** You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+---
+
+## Contact
+For questions or feedback, please contact Sam Berens at [s.berens@sussex.ac.uk](mailto:s.berens@sussex.ac.uk).
