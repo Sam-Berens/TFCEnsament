@@ -20,11 +20,12 @@ All functions default to **10,000** bootstrap iterations and can run in parallel
 ---
 
 ## Installation
-
+In bash:
 ```bash
 git clone https://github.com/Sam-Berens/TFCEnsament.git
 cd TFCEnsament
 ```
+In MATLAB:
 ```MATLAB
 addpath(genpath(pwd));
 savepath; % (optional) to make the change permanent.
