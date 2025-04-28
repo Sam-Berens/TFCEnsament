@@ -35,6 +35,9 @@ nBoot = 1e4;
 %% Determine the number of observations (n)...
 % ... and convert Y from a cell to a mat if needed.
 if iscell(Y)
+    if size(Y,1)==1
+        Y = Y';
+    end
     n = numel(Y);
     V = spm_vol(Y);
     Y = cellfun(@(vv)spm_read_vols(vv),V,'UniformOutput',false);

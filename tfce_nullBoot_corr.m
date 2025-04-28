@@ -23,6 +23,9 @@ if nargin < 2
     error('tfce_nullBoot_corr calls require at least 2 inputs.');
 end
 if iscell(Y)
+    if size(Y,1)==1
+        Y = Y';
+    end
     if numel(x) ~= numel(Y)
         error(['Input x should be an [n,1] vector, ',...
             'where n is the number of observations in Y.']);

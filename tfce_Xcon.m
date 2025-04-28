@@ -9,11 +9,14 @@ function [tfceStat,testStat,df1,df2] = tfce_Xcon(Y,X,H)
 % tfceStat: A 3D numeric of TFCE statistics.
 % testStat: A 3D numeric of t- or F-values (depending on the rank of H).
 % df1: Contrast degrees of freedom (df1 = rank(H)).
-% df2: Residual degrees of freedom (df2 = trace(X)).
+% df2: Residual degrees of freedom (df2 = trace(M)).
 
 %% Check the input Y to see whether it is a cell array of image names
 % ... If so, load the images as a matrix
 if iscell(Y)
+    if size(Y)==1
+        Y = Y';
+    end
     V = spm_vol(Y);
     Y = cellfun(@(vv)spm_read_vols(vv),V,'UniformOutput',false);
     Y = cell2mat(permute(Y,[2,3,4,1]));
