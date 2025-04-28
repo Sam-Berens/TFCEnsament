@@ -55,7 +55,7 @@ savepath; % (optional) to make the change permanent.
 ```
 Each call returns:
  - tfceStat — TFCE value at every voxel.
- - pVal — voxel-wise, family-wise-error–controlled p-values.
+ - pVal — voxel-wise, family-wise-error–controlled _p_-values.
 Masking or cluster-forming thresholds are never required — that’s the point of TFCE!
 
 ---
