@@ -32,15 +32,19 @@ end
 %% Hyperparamters
 nBoot = 1e4;
 
-%% Subtract h0 from Y
-Y = Y - h0;
-
-%% Determine the number of observations (n)
+%% Determine the number of observations (n)...
+% ... and convert Y from a cell to a mat if needed.
 if iscell(Y)
     n = numel(Y);
+    V = spm_vol(Y);
+    Y = cellfun(@(vv)spm_read_vols(vv),V,'UniformOutput',false);
+    Y = cell2mat(permute(Y,[2,3,4,1]));
 else
     n = size(Y,4);
 end
+
+%% Subtract h0 from Y
+Y = Y - h0;
 
 %% Set X and H
 X = ones(n,1);
@@ -72,7 +76,7 @@ return
 function [nullStat] = ParBoot(n,X,Y,H,mask,nullStat)
 nBoot = size(nullStat,2);
 parfor iBoot = 1:nBoot
-    cY = randsample([-1,1],n,true)' .* Y;
+    cY = reshape(randsample([-1,1],n,true),[1,1,1,n]) .* Y;
     nullStat_vol = tfce_Xcon(cY,X,H);
     nullStat(:,iBoot) = nullStat_vol(mask);
 end
@@ -81,7 +85,7 @@ return
 function [nullStat] = SerBoot(n,X,Y,H,mask,nullStat)
 nBoot = size(nullStat,2);
 for iBoot = 1:nBoot
-    cY = randsample([-1,1],n,true)' .* Y;
+    cY = reshape(randsample([-1,1],n,true),[1,1,1,n]) .* Y;
     nullStat_vol = tfce_Xcon(cY,X,H);
     nullStat(:,iBoot) = nullStat_vol(mask);
     if mod(iBoot,79)==0
