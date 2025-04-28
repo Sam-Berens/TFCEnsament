@@ -33,7 +33,8 @@ savepath          # (optional) make it permanent
 
 ## Requirements
  - MATLAB R2018b or newer.
- - Statistics & Machine Learning Toolbox.
+ - Statistics & Machine Learning Toolbox (MATLAB).
+ - Image Processing Toolbox (MATLAB).
  - (Optional) Parallel Computing Toolbox — enables faster bootstrapping.
  - (Optional) SPM12 — only needed if you want to pass NIfTI filenames directly instead of 4-D matrices.
 
