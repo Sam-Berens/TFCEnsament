@@ -1,6 +1,6 @@
 # TFCEnsament
 
-*TFCEnsament* is a small, self-contained MATLAB toolbox that performs **Threshold-Free Cluster Enhancement (TFCE)**–based statistical inference for volumetric (3-D) data, such as fMRI or other neuro-imaging modalities.  
+*TFCEnsament* is a small, self-contained MATLAB toolbox that performs **Threshold-Free Cluster Enhancement (TFCE)**–based statistical inference for volumetric (3D) data, such as fMRI or other neuro-imaging modalities.  
 It implements one-sample, correlation, and general linear model (GLM) contrasts with non-parametric null-distribution generation via bootstrapping or permutation.
 
 ---
@@ -71,7 +71,8 @@ Masking or cluster-forming thresholds are never required — that’s the point 
 ## Performance tips
  - Parallelise: Leave UseParFor at its default true if you have the Parallel Computing Toolbox.
  - Fewer iterations: For exploratory work, reduce nBoot inside the functions, but note that accuracy suffers.
- - Memory: Bootstrapping stores TFCE vectors only (not entire volumes) to minimise RAM usage.
+
+---
 
 ## Citing this toolbox
 If you use TFCEnsament in your work, please cite:
